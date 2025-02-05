@@ -1,0 +1,36 @@
+(upstream) {
+	reverse_proxy /deepseek/ localhost:7001 {
+		header_up X-Accel-Buffering "no"
+	}
+	reverse_proxy /kimi/ localhost:7002 {
+		header_up X-Accel-Buffering "no"
+	}
+	reverse_proxy /qwen/ localhost:7003 {
+		header_up X-Accel-Buffering "no"
+	}
+	reverse_proxy /doubao/ localhost:7004 {
+		header_up X-Accel-Buffering "no"
+	}
+	reverse_proxy /minimax/ localhost:7005 {
+		header_up X-Accel-Buffering "no"
+	}
+}
+
+(logging) {
+	log {
+		output file /var/log/caddy.log
+		format json
+	}
+}
+
+(main_site) {
+	# Enable the static file server.
+	file_server
+
+	import logging
+	import upstream
+}
+
+:7000 {
+	import main_site
+}

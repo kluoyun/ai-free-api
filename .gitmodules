@@ -1,0 +1,15 @@
+[submodule "deepseek-free-api"]
+	path = deepseek-free-api
+	url = https://github.com/LLM-Red-Team/deepseek-free-api.git
+[submodule "kimi-free-api"]
+	path = kimi-free-api
+	url = https://github.com/LLM-Red-Team/kimi-free-api.git
+[submodule "qwen-free-api"]
+	path = qwen-free-api
+	url = https://github.com/LLM-Red-Team/qwen-free-api.git
+[submodule "doubao-free-api"]
+	path = doubao-free-api
+	url = https://github.com/LLM-Red-Team/doubao-free-api.git
+[submodule "minimax-free-api"]
+	path = minimax-free-api
+	url = https://github.com/LLM-Red-Team/minimax-free-api.git
