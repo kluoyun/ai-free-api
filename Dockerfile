@@ -4,31 +4,31 @@ FROM node:lts AS builder
 WORKDIR /deepseek-free-api
 COPY ./deepseek-free-api /deepseek-free-api
 RUN sed -i 's/port: 8000/port: 7001/' /deepseek-free-api/configs/dev/service.yml
-RUN yarn install --registry https://registry.npmmirror.com/ && yarn run build
+RUN yarn install && yarn run build
 
 # build kimi-free-api
 WORKDIR /kimi-free-api
 COPY ./kimi-free-api /kimi-free-api
 RUN sed -i 's/port: 8000/port: 7002/' /kimi-free-api/configs/dev/service.yml
-RUN yarn install --registry https://registry.npmmirror.com/ && yarn run build
+RUN yarn install && yarn run build
 
 # build qwen-free-api
 WORKDIR /qwen-free-api
 COPY ./qwen-free-api /qwen-free-api
 RUN sed -i 's/port: 8000/port: 7003/' /qwen-free-api/configs/dev/service.yml
-RUN yarn install --registry https://registry.npmmirror.com/ && yarn run build
+RUN yarn install && yarn run build
 
 # build doubao-free-api
 WORKDIR /doubao-free-api
 COPY ./doubao-free-api /doubao-free-api
 RUN sed -i 's/port: 8000/port: 7004/' /doubao-free-api/configs/dev/service.yml
-RUN yarn install --registry https://registry.npmmirror.com/ && yarn run build
+RUN yarn install && yarn run build
 
 # build minimax-free-api
 WORKDIR /minimax-free-api
 COPY ./minimax-free-api /minimax-free-api
 RUN sed -i 's/port: 8000/port: 7005/' /minimax-free-api/configs/dev/service.yml
-RUN yarn install --registry https://registry.npmmirror.com/ && yarn run build
+RUN yarn install && yarn run build
 
 # runner
 FROM node:lts-alpine AS runner
